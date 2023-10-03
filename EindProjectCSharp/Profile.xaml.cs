@@ -48,8 +48,17 @@ namespace EindProjectCSharp
         // Update game
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            Update update = new Update();
-            update.ShowDialog();
+            DataRowView selectedRow = dgGames.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                Update update = new Update(selectedRow);
+                update.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No Game Selected To Update");
+            }
         }
 
         // Remove game

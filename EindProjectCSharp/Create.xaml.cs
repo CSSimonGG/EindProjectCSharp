@@ -37,7 +37,7 @@ namespace EindProjectCSharp
             cmbStudio.ItemsSource = _gamesDB.SelectStudios();
         }
 
-        private void Create_Click(object sender, RoutedEventArgs e)
+        private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
             if (_gamesDB.InsertGame(tbTitle.Text, tbDescription.Text, tbImagePath.Text, cmbStudio.Text))
             {

@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="Update" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel>
+            <DockPanel>
+                <TextBlock FontSize="16" FontWeight="Bold">Create A New Game</TextBlock>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Width="80" Text="Title:"/>
+                <TextBox x:Name="tbTitle"/>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Width="80" Text="Description:"/>
+                <TextBox Height="80" x:Name="tbDescription"/>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Width="80" Text="Image:"/>
+                <TextBox x:Name="tbImagePath"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Width="80" Text="Game Studio:"/>
+                <ComboBox x:Name="cmbStudio" SelectedValuePath="Content">
+                </ComboBox>
+            </DockPanel>
+            <Button x:Name="btnUpdate" Content="Update Game" Click="BtnUpdate_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

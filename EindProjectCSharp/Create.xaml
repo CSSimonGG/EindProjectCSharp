@@ -28,7 +28,7 @@
                 <ComboBox x:Name="cmbStudio" SelectedValuePath="Content">
                 </ComboBox>
             </DockPanel>
-            <Button Content="Make New Game" Click="Create_Click"/>
+            <Button x:Name="btnCreate" Content="Make New Game" Click="BtnCreate_Click"/>
         </StackPanel>
     </Grid>
 </Window>
