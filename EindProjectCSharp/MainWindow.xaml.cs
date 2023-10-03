@@ -1,7 +1,9 @@
 ﻿
 
+using EindProjectCSharp.Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +24,26 @@ namespace EindProjectCSharp
     /// </summary>
     public partial class MainWindow : Window
     {
+        GamesDB _gamesDB = new GamesDB();
         public MainWindow()
         {
             InitializeComponent();
+            FillDataGrid();
+        }
+        private void FillDataGrid()
+        {
+            DataTable students = _gamesDB.SelectGames();
+            if (students != null)
+            {
+                dgGames.ItemsSource = students.DefaultView;
+            }
+        }
+
+        private void BtnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.ShowDialog();
+            FillDataGrid();
         }
     }
 }

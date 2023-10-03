@@ -1,11 +1,11 @@
-﻿<Window x:Class="EindProjectCSharp.MainWindow"
+﻿<Window x:Class="EindProjectCSharp.Profile"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EindProjectCSharp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Profile" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"/>
@@ -18,13 +18,12 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0" Content="Home"/>
+        <Button x:Name="btnUpdate" Grid.Column="0" Grid.Row="0" Content="Update Game" Click="BtnUpdate_Click"></Button>
 
-        <Button x:Name="btnProfile" Grid.Column="2" Grid.Row="0" Content="Profile" Click="BtnProfile_Click"></Button>
+        <Button x:Name="btnRemove" Grid.Column="1" Grid.Row="0" Width="100" Content="Remove Game" Click="BtnRemove_Click"></Button>
 
-        <Button Grid.Column="1" Grid.Row="0" Width="100" Content="Library"></Button>
+        <Button x:Name="btnCreate" Grid.Column="2" Grid.Row="0" Content="New Game" Click="BtnCreate_Click"/>
 
-        <DataGrid x:Name="dgGames" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"></DataGrid>
-        
+        <DataGrid x:Name="dgGames" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" SelectionMode="Single"></DataGrid>
     </Grid>
 </Window>
