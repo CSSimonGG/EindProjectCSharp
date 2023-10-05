@@ -19,12 +19,13 @@ using System.Data;
 
 namespace EindProjectCSharp
 {
+    // Simon de Klerk
     /// <summary>
     /// Interaction logic for Create.xaml
     /// </summary>
     public partial class Create : Window
     {
-        GamesDB _gamesDB = new GamesDB();
+        GamesDB _gamesDB = new GamesDB(); // Get games database
 
         public Create()
         {
@@ -34,11 +35,13 @@ namespace EindProjectCSharp
 
         private void FillStudioSelection()
         {
+            // Fill combobox with all studios from database
             cmbStudio.ItemsSource = _gamesDB.SelectStudios();
         }
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
+            // (Try to) Put game into database
             if (_gamesDB.InsertGame(tbTitle.Text, tbDescription.Text, tbImagePath.Text, cmbStudio.Text))
             {
                 MessageBox.Show($"Game Created");
@@ -47,7 +50,7 @@ namespace EindProjectCSharp
             {
                 MessageBox.Show($"Game Creation Failed");
             }
-            this.Close();
+            this.Close(); // Close window
         }
     }
 }

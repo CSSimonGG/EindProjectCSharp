@@ -24,6 +24,6 @@
 
         <Button x:Name="btnCreate" Grid.Column="2" Grid.Row="0" Content="New Game" Click="BtnCreate_Click"/>
 
-        <DataGrid x:Name="dgGames" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" SelectionMode="Single"></DataGrid>
+        <DataGrid x:Name="dgGames" IsReadOnly="True" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" SelectionMode="Single"></DataGrid>
     </Grid>
 </Window>
