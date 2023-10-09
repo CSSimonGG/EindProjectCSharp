@@ -42,15 +42,36 @@ namespace EindProjectCSharp
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
             // (Try to) Put game into database
-            if (_gamesDB.InsertGame(tbTitle.Text, tbDescription.Text, tbImagePath.Text, cmbStudio.Text))
+            if(!string.IsNullOrWhiteSpace(tbTitle.Text)) // Check for title input
             {
-                MessageBox.Show($"Game Created");
+                if (!string.IsNullOrWhiteSpace(tbDescription.Text)) // Check for description input
+                {
+                    if (!string.IsNullOrWhiteSpace(tbImagePath.Text)) // Check for image path input
+                    {
+                        if (!string.IsNullOrEmpty(cmbStudio.Text)) // Check for studio input
+                        {
+                            MessageBox.Show("Game Created");
+                            this.Close(); // Close window
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Studio Input");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Image Path Input");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No Description Input");
+                }
             }
             else
             {
-                MessageBox.Show($"Game Creation Failed");
+                MessageBox.Show("No Title Input");
             }
-            this.Close(); // Close window
         }
     }
 }
